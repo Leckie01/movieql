@@ -1,6 +1,12 @@
+const leckie = {
+  name: "Leckie",
+  age: 27,
+  gender: "male"
+};
+
 const resolvers = {
   Query: {
-    name: () => "Leckie"
+    person: () => leckie
   }
 };
 
