@@ -1,4 +1,4 @@
-export const people = [
+export let movies = [
   {
     id: "0",
     name: "Leckie",
@@ -43,7 +43,19 @@ export const people = [
   }
 ];
 
+export const getMovies = () => movies;
+
 export const getById = id => {
-  const filteredPeople = people.filter(person => person.id === String(id));
-  return filteredPeople[0];
+  const filteredMovies = movies.filter(movie => movie.id === String(id));
+  return filteredMovies[0];
+};
+
+export const deleteMovie = id => {
+  const cleanedMovies = movies.filter(movie => movie.id !== String(id));
+  if (movies.length > cleanedMovies.length) {
+    movies = cleanedMovies;
+    return true;
+  } else {
+    return false;
+  }
 };
