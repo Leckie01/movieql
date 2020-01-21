@@ -11,6 +11,6 @@ export const getMovies = async (limit, rating) => {
     data: {
       data: { movies }
     }
-  } = await api.get("/", { limit, rating });
+  } = await api.get("/", { params: { limit, minimum_rating: rating } });
   return movies;
 };
